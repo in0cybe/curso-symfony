@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block contenedor_principal %}
+
+    {% include 'common/_messages.html.twig' %}
+
+    <form method="post">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" value="{{ categoria.nombre }}" name="nombre" id="nombre" placeholder="Nombre" />
+        </div>
+        <div class="form-group">
+            <label for="nombre">Color</label>
+            <input type="color" class="form-control" value="{{ categoria.color }}" name="color" id="color" placeholder="Color" />
+        </div>
+        <input hidden name="_token" value="{{ csrf_token('categoria') }}" />
+        <button type="submit" class="btn btn-outline-success">Guardar</button>
+    </form>
+{% endblock %}
